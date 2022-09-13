@@ -1,5 +1,5 @@
-a=(input("a="))
-b=(input("b="))
+a = (input("a="))
+b = (input("b="))
 
 a,b = b,a
 
