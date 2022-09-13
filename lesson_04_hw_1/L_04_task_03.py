@@ -3,16 +3,14 @@ import math
 r = float(input("Введите радиус конуса: "))
 h = float(input("Введите высоту конуса: "))
 
-def v (r,h):
-    res = (math.pi*r*r*h)/3
-    return res
+def cone_square_and_volume (a, b):
+    v = (math.pi*r*r*h)/3
+    s = math.pi*r*math.sqrt(r*r+h*h)
+    return v, s
 
-def s (r,h):
-    res = math.pi*r*math.sqrt(r*r+h*h)
-    return res
+cone_square_and_volume (r, h)
 
-ob = v(r,h)
-p = s(r,h)
+v, s = cone_square_and_volume (r, h)
 
-print("Площадь конуса: ", p)
-print("Объём конуса: ", ob)
+print("Площадь конуса: ", s)
+print("Объём конуса: ", v)
