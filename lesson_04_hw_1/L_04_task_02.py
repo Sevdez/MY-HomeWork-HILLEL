@@ -12,5 +12,9 @@ def triangle_square_and_perimeter(a, b):
     P = AB + AC + BC
     return S, P
 
+triangle_square_and_perimeter(AB, AC)
+
+S,P = (triangle_square_and_perimeter(AB, AC))
+
 print("Площадь треугольника: %.2f" % S)
 print("Периметр треугольника: %.2f" % P)
