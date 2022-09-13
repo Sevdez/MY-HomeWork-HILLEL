@@ -1,4 +1,4 @@
-i =float(input("Введите число:"))
+i = float(input("Введите число:"))
 
 def o(i):
     return i-1
@@ -8,5 +8,6 @@ def p(i):
 
 ip = p(i)
 io = o(i)
+
 print("Следующее число:", ip)
 print("Предыдущее число:", io)
