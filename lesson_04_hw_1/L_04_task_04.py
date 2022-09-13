@@ -1,13 +1,10 @@
-i = float(input("Введите число:"))
+i = float(input("Please enter an integer number:"))
 
-def o(i):
-    return i-1
+q = i+1
+w = i-1
 
-def p(i):
-    return i+1
+print("Next number for number", i, end="")
+print(" " + "is", q)
 
-ip = p(i)
-io = o(i)
-
-print("Следующее число:", ip)
-print("Предыдущее число:", io)
+print("Previous number for number", i, end="")
+print(" " + "is", w)
