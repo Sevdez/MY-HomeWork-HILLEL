@@ -6,23 +6,11 @@ AC = input("Длина второго катета: ")
 AB = float(AB)
 AC = float(AC)
 
-BC = math.sqrt(AB ** 2 + AC ** 2)
+def triangle_square_and_perimeter(a, b):
+    BC = math.sqrt(AB ** 2 + AC ** 2)
+    S = (AB * AC) / 2
+    P = AB + AC + BC
+    return S, P
 
-
-def perimetr(AB, AC):
-    res = (AB + AC) * 2
-    return res
-
-
-def area(AB, AC):
-    res = AB * AC
-    return res
-
-
-p = perimetr(AB, AC)
-print("Периметр = %d" % (p))
-s = area(AB, AC)
-print("Площадь = %d" % (s))
-
-print("Периметр = %d" % (perimetr(AB, AC)))
-print("Площадь = %d" % (area(AB, AC)))
+print("Площадь треугольника: %.2f" % S)
+print("Периметр треугольника: %.2f" % P)
