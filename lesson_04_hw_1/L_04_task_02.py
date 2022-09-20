@@ -1,20 +1,18 @@
 import math
 
-AB = input("Длина первого катета: ")
-AC = input("Длина второго катета: ")
+ab = input("Длина первого катета: ")
+ac = input("Длина второго катета: ")
 
-AB = float(AB)
-AC = float(AC)
+ab = float(ab)
+ac = float(ac)
 
 def triangle_square_and_perimeter(a, b):
-    BC = math.sqrt(AB ** 2 + AC ** 2)
-    S = (AB * AC) / 2
-    P = AB + AC + BC
-    return S, P
+    bc = math.sqrt(ab ** 2 + ac ** 2)
+    s = (ab * ac) / 2
+    p = ab + ac + bc
+    return s, p
 
-triangle_square_and_perimeter(AB, AC)
+s,p = (triangle_square_and_perimeter(ab, ac))
 
-S,P = (triangle_square_and_perimeter(AB, AC))
-
-print("Площадь треугольника: %.2f" % S)
-print("Периметр треугольника: %.2f" % P)
+print("Площадь треугольника: %.2f" % s)
+print("Периметр треугольника: %.2f" % p)
