@@ -1,10 +1,8 @@
 my_list = [750, 4546, 787]
 
-def copydeep(lst):
-    new_list = []
-    for elem in lst:
-        new_list.append(elem)
-    return new_list
+def copy_deep(nested_content):
+  return eval(repr(nested_content))
 
-NL = copydeep(my_list)
-print (NL)
+NL = copy_deep(my_list)
+
+print(NL)
