@@ -5,14 +5,14 @@ def expected(expected_types):
     def decorator(func):
         @wraps(func)
         def wrapper(*args, **kwargs):
-            result = func()
+            result = func(*args, **kwargs)
             if type(result) not in expected_types:
-                print("unexpected type")
+                raise Exception("тут шото не тот тип =)")
         return wrapper
     return decorator
 
 @expected((str, int))
-def a ():
-    return None
+def examination(value):
+    return value
 
-a()
+examination()
