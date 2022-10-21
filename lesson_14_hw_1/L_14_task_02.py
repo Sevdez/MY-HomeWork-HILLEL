@@ -14,7 +14,6 @@ class Circle:
 
 
 
-
 class Dot:
 
     def __init__(self, x, y):
