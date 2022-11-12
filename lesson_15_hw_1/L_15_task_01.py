@@ -32,7 +32,6 @@ class Store:
         self.income_by_product = shop_data.income_by_product
 
         save_data = [self.products, self.total_income, self.income_by_product]
-        print(save_data)
         with open('store.obj', 'wb') as f:
             pickle.dump(save_data, f)
 
