@@ -19,6 +19,14 @@ my_products = [
 ]
 
 
+class Data:
+
+    def __init__(self, products, total_income, income_by_product):
+        self.products = products
+        self.total_income = total_income
+        self.income_by_product = income_by_product
+
+
 class Store:
 
     def __init__(self):
@@ -31,19 +39,18 @@ class Store:
         self.total_income = shop_data.total_income
         self.income_by_product = shop_data.income_by_product
 
-        save_data = [self.products, self.total_income, self.income_by_product]
         with open('store.obj', 'wb') as f:
-            pickle.dump(save_data, f)
+            pickle.dump(shop_data, f)
 
     def load_store(self):
         with open('store.obj', 'rb') as f:
             store_data = pickle.load(f)
-            self.products = store_data[0]
-            self.total_income = store_data[1]
-            self.income_by_product = store_data[2]
+            self.products = store_data.products
+            self.total_income = store_data.total_income
+            self.income_by_product = store_data.income_by_product
 
     def get_store(self):
-        return [self.products, self.total_income, self.income_by_product]
+        return Data(self.products, self.total_income, self.income_by_product)
 
 
 my_store = Store()
@@ -81,7 +88,7 @@ class Shop:
                 f'How many you want to buy?'
             )
 
-            if quantity_input > str(required_product.quantity):
+            if int(quantity_input) > required_product.quantity:
                 print('Sorry, the Shop doesn\'t have this amount of product')
                 return get_quantity()
             else:
@@ -105,10 +112,13 @@ class Shop:
     def get_total_income(self):
         return self.total_income
 
-    def set_store(self, store):
-        self.products = store[0]
-        self.total_income = store[1]
-        self.income_by_product = store[2]
+    def set_store(self, data):
+        self.products = data.products
+        self.total_income = data.total_income
+        self.income_by_product = data.income_by_product
+
+    def get_data(self):
+        return Data(self.products, self.total_income, self.income_by_product)
 
 
 my_shop = Shop(my_products)
